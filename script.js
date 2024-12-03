@@ -49,7 +49,7 @@ let validColors = ["blue", "red", "black", "green","yellow","pink","orange","pur
 
 // Check if the user's input matches any of the valid colors (case-insensitive)
 if (!validColors.includes(a.toLowerCase())) {
-    document.body.style.backgroundImage = "url('https://thumbs.dreamstime.com/b/stamp-text-not-valid-inside-illustration-not-valid-108748670.jpg')";
+    document.body.style.backgroundImage = "url('https://thumbs.dreamstime.com/b/stamp-text-not-valid-inside-illustration-not-valid-108748670.jpg') height=30px";
 } else {
     document.write("<h1>Your Favorite is "+ a );
 }
