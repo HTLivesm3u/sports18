@@ -6,9 +6,17 @@
     <title>js pratice</title>
 </head>
 <body>
-<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-height="200px", width="200px"> -->
-    
-    <script src="script.js"></script>
+<video id="video" controls></video>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+  var video = document.getElementById('video');
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('master.m3u8'); // Ensure this is hosted correctly
+    hls.attachMedia(video);
+  }
+</script>
+
+
 </body>
 </html>
