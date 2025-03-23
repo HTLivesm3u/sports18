@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=426x240
+https://hssportsprepack.akamaized.net/videos/cricket/1271337416/1540040179/in/hin/v4/avc/1742674759786/hls/plain/media-2/index.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480
+https://hssportsprepack.akamaized.net/videos/cricket/1271337416/1540040179/in/hin/v4/avc/1742674759786/hls/plain/media-1/index.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720
+https://hssportsprepack.akamaized.net/videos/cricket/1271337416/1540040179/in/hin/v4/avc/1742674759786/hls/plain/media-3/index.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=3000000,RESOLUTION=1920x1080
+https://hssportsprepack.akamaized.net/videos/cricket/1271337416/1540040179/in/hin/v4/avc/1742674759786/hls/plain/media-4/index.m3u8
