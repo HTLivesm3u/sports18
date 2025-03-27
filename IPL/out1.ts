@@ -2,6 +2,6 @@
 #EXT-X-TARGETDURATION:10
 #EXT-X-VERSION:3
 #EXTINF:10,
-https://livetvbox.live:443/live/rajnikant/rajnikant/98866.ts
+http://103.122.74.6:8888/hls/STAR.SPORTS1.HD.m3u8
 #EXTINF:10,
-https://livetvbox.live:443/live/rajnikant/rajnikant/98866.ts
+http://103.122.74.6:8888/hls/STAR.SPORTS1.HD.m3u8
