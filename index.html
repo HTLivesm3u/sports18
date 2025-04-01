@@ -1,54 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HLS Auto Play</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #111;
-        }
-        video {
-            width: 80%;
-            max-width: 800px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-        }
-    </style>
-</head>
+
+
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@WatchAddaLive</title>
+  <link rel="stylesheet" href="https://cxh.pages.dev/style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    #player {
+      width: 100%;
+      max-width: 100%;
+      height: 56.25vw;
+      max-height: 70vh;
+      position: relative;
+      top: 0;
+      left: 0;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      #player {
+        height: 50vh;
+      }
+    }
+
+    #telegramBtn {
+      display: block;
+      width: 90%;
+      margin: 20px auto;
+      padding: 15px;
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    #telegramBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection"></head>
 <body>
-    <video id="video" controls autoplay muted></video>
-    <script>
-        var video = document.getElementById('video');
-        var videoSrc = "https://hotstarlive.vercel.app/IPL/master.m3u8";
+  <iframe id="player" src="https://gyanibrocricketchannel.github.io/mpdplayer/?Watch=https://1a-1791.com/live/gi29le7p/slot-49/92o6-vuoq/chunklist.m3u8" title="Live match video player" allowfullscreen=""></iframe>
 
-        if (Hls.isSupported()) {
-            var hls = new Hls({ debug: true }); // Enable debugging
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                console.log("HLS manifest loaded successfully.");
-                video.play().catch(error => console.error("Autoplay failed:", error));
-            });
+  <a id="telegramBtn" href="https://t.me/WatchAddaLive" target="_blank">Join Our Telegram Channel</a>
+  <script>var joinTelegram = confirm("Join For More Links!!");
+    if (joinTelegram) {
+        window.location.href = "https://t.me/WatchAddaLive";
+    }
 
-            hls.on(Hls.Events.ERROR, function (event, data) {
-                console.error("HLS Error:", data);
-            });
+    function welcome() {
+        window.open("https://t.me/WatchAddaLive");
+    }</script>
+<!-- Cloudflare Pages Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;89ec3c1c820d4609b4a3643417d2cb06&quot;}"></script><!-- Cloudflare Pages Analytics -->
 
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoSrc;
-            video.addEventListener('loadedmetadata', function () {
-                console.log("Playing with native HLS support.");
-                video.play().catch(error => console.error("Autoplay failed:", error));
-            });
-        } else {
-            console.error("HLS is not supported in this browser.");
-        }
-    </script>
-</body>
-</html>
+</body></html>
