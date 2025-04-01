@@ -1,22 +1,45 @@
-<<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script>
-  window.location.href="http://ipl.packetcdn.me:8978/8be1228d2852985ebbbdb83a2ec37a1c4668ac6e913f06523f0507ec18aaa1a07b53c5e027/index.m3u8?token=985aaceebe883c9d8decc0427d253742c3eecb23356f07bd0a3348e911b81b3315b8aba08cb1e97532837c2e1f0d909edc0490c99b1b3051190a82adea930ce0b33e98a2ff-ad2781967111f21d2969b5eada916ad5"
-  // setTimeout(function() {
-  //   window.location.href = "https://t.me/HTLivesm3u";
-  // }, 0.1); // 3000ms = 3 seconds
-</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Auto Play</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <img src="/champions-trophy-2025-logo.svg">
-<video id="video" controls></video>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script>
-  window.location.href = "https://t.me/HTLivesm3u"
+    <video id="video" controls autoplay muted></video>
+    <script>
+        var video = document.getElementById('video');
+        var videoSrc = "https://hotstarlive.vercel.app/IPL/master1.m3u8";
 
-</script>
-
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
+    </script>
 </body>
 </html>
