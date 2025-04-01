@@ -3,30 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HLS Streaming</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css">
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+    <title>HLS Auto Play</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <video id="player" controls autoplay muted></video>
-
+    <video id="video" controls autoplay muted></video>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("player");
-            const videoSrc = "https://allinonereborn.com/ipl12.m3u8?id=98866";
+        var video = document.getElementById('video');
+        var videoSrc = "https://allinonereborn.com/ipl12.m3u8?id=98866";
 
-            if (Hls.isSupported()) {
-                const hls = new Hls();
-                hls.loadSource(videoSrc);
-                hls.attachMedia(video);
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = videoSrc;
-            }
+        if (Hls.isSupported()) {
+            var hls = new Hls({ debug: true }); // Enable debugging
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                console.log("HLS manifest loaded successfully.");
+                video.play().catch(error => console.error("Autoplay failed:", error));
+            });
 
-            const player = new Plyr(video);
-        });
+            hls.on(Hls.Events.ERROR, function (event, data) {
+                console.error("HLS Error:", data);
+            });
+
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+            video.addEventListener('loadedmetadata', function () {
+                console.log("Playing with native HLS support.");
+                video.play().catch(error => console.error("Autoplay failed:", error));
+            });
+        } else {
+            console.error("HLS is not supported in this browser.");
+        }
     </script>
-
 </body>
 </html>
