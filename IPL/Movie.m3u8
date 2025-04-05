@@ -1,9 +1,7 @@
 #EXTM3U
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=512x288
-https://hssportsprepack.akamaized.net/videos/cricket/1271343481/1540038887/in/hin/v1/avc/1741538351713/hls/plain/media-2/index.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480
-https://hssportsprepack.akamaized.net/videos/cricket/1271343481/1540038887/in/hin/v1/avc/1741538351713/hls/plain/media-1/index.m3u8
+https://worker-green-hat-786e.moustapha-khalid.workers.dev/1743880078/AhUOChdfSl8aFBhXXQQEQF8DHEoBB1MUXlVISV1XURVTVUxIAFxRFFlTH0xKF1deDgQMVVZdVkdTTxcKUA/Loveyapa_(2025)_Hindi_Movie_480p_HDCAM.mp4
 #EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720
-https://hssportsprepack.akamaized.net/videos/cricket/1271343481/1540038887/in/hin/v1/avc/1741538351713/hls/plain/media-3/index.m3u8
+https://yellow-hat-2c76.ayobamioyekanmi.workers.dev/1743880144/AhUOChdfSl8aFBhXXQQEQF8DHEoBB1MUXlVISV1XURVTVUxIAFxRFFlTH0xKF1deDgQMVVZdVkdSTxcKUA/Loveyapa_(2025)_Hindi_Movie_720p_HDCAM.mp4
 #EXT-X-STREAM-INF:BANDWIDTH=3000000,RESOLUTION=1920x1080
-https://hssportsprepack.akamaized.net/videos/cricket/1271343481/1540038887/in/hin/v1/avc/1741538351713/hls/plain/media-4/index.m3u8
+https://worker-winter-breeze-490c.vienas23.workers.dev/1743880169/AhUOChdfSl8aFBhXXQQEQF8DHEoBB1MUXlVISV1XURVTVUxIAFxRFFlTH0xKF1deDgQMVVZdVkddTxcKUA/Loveyapa_(2025)_Hindi_Movie_1080p_HDCAM.mp4
