@@ -1,3 +1,7 @@
 #EXTM3U
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3833000,AVERAGE-BANDWIDTH=3646000
-http://38.76.152.22:8000/play/a072/index.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=426x240
+https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqoww3vej2l5okv443ijkva/v.mp4
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480
+https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqow63vej2l5okyq3663rsa/v.mp4
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720
+https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqowg3vej2l5okxhx5jlxxa/v.mp4
