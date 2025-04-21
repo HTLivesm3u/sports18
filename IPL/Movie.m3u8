@@ -1,7 +1,10 @@
 #EXTM3U
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=426x240
+
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=426x240,CODECS="avc1.42e01e,mp4a.40.2"
 https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqoww3vej2l5okv443ijkva/v.mp4
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480
+
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480,CODECS="avc1.42e01e,mp4a.40.2"
 https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqow63vej2l5okyq3663rsa/v.mp4
-#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720
+
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720,CODECS="avc1.42e01e,mp4a.40.2"
 https://essrv0.vkcdn5.com/olaxlxdzxtuiolyobfykbar6mfq754stjz3essqowg3vej2l5okxhx5jlxxa/v.mp4
