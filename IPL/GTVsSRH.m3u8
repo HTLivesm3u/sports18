@@ -1,9 +1,6 @@
 #EXTM3U
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=426x240
-https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/hdntl=exp=1743951036~acl=/*~data=hdntl~hmac=888267879e4e16defe0bd57282832ff2d33ecc911470e946e02e45071f206ac4/Sports18_1_HD_voot_MOB-audio_108038_eng=108000-video=305200.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480
-https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/hdntl=exp=1743951181~acl=/*~data=hdntl~hmac=b9664e6a2d7a5e573e8d5d3d30c897511529aafd771b866d10aafaa42e42a9d5/Sports18_1_HD_voot_MOB-audio_108038_eng=108000-video=662800.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=1280x720
-https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/hdntl=exp=1743950818~acl=/*~data=hdntl~hmac=ace17263b1b517a1634cb94f6fa526a6eeb0119384e4e6ae91c9b84068d08928/Sports18_1_HD_voot_MOB-audio_108038_eng=108000-video=2297600.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=3000000,RESOLUTION=1920x1080
-https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/hdntl=exp=1743951105~acl=/*~data=hdntl~hmac=ecba78dc72f1586631919a51202363b908daf2e393a8cc93d075270b0052ea69/Sports18_1_HD_voot_MOB-audio_108038_eng=108000-video=3728000.m3u8
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:BANDWIDTH=3000000,AVERAGE-BANDWIDTH=3000000,CODECS="avc1.640028,ec-3.1.1,mp4a.40.5",PROGRAM-ID=1,RESOLUTION=1920x1080,FRAME-RATE=60.000
+https://allinonereborn.com/shareb.m3u8?id=124287
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,AVERAGE-BANDWIDTH=1500000,CODECS="avc1.64001f,ec-3.1.1,mp4a.40.5",PROGRAM-ID=1,RESOLUTION=1280x720,FRAME-RATE=24.000
+https://allinonereborn.com/shareb.m3u8?id=211
