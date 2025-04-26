@@ -1,1 +1,12 @@
-
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:1090636
+#EXT-X-TARGETDURATION:1000
+#EXTINF:1000.000,
+http://starshare.org:80/live/love95/love95/211.ts
+#EXTINF:1000.000,
+http://starshare.org:80/live/love95/love95/211.ts
+#EXTINF:1000.000,
+http://starshare.org:80/live/love95/love95/211.ts
+#EXTINF:1000.000,
+http://starshare.org:80/live/love95/love95/211.ts
