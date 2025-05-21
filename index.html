@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<script>
- window.location.href = "https://t.me/+2kGD--3U9js5MWM1"
-</script>
-    <style>
-    </style>
+  <title>Bitly URL Shortener</title>
 </head>
 <body>
+  <h2>Shorten a URL using Bitly API</h2>
+
+  <input type="text" id="longUrl" value="http://amit-1.allinonereborn.in/tplaydrm769/manifest.mpd" size="80">
+  <button onclick="shortenURL()">Shorten URL</button>
+
+  <p><strong>Short URL:</strong> <span id="result">None</span></p>
+
+  <script>
+    async function shortenURL() {
+      const longUrl = document.getElementById('longUrl').value;
+      const token = "f9d7cd7352b9cb4631ac3ce56cc3eaf928075508";
+
+      try {
+        const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ long_url: longUrl })
+        });
+
+        if (!response.ok) {
+          throw new Error("Bitly API error: " + response.status);
+        }
+
+        const data = await response.json();
+        document.getElementById("result").innerHTML = `<a href="${data.link}" target="_blank">${data.link}</a>`;
+      } catch (error) {
+        document.getElementById("result").innerText = "Error: " + error.message;
+        console.error("Error:", error);
+      }
+    }
+  </script>
 </body>
 </html>
