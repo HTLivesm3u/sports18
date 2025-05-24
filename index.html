@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Short.io URL Shortener</title>
+  <title>Bitly URL Shortener</title>
 </head>
 <body>
-  <h2>Shorten a URL using Short.io API</h2>
+  <h2>Shorten a URL using Bitly API</h2>
 
-  <input type="text" id="longUrl" placeholder="Enter long URL" size="80">
+  <input type="text" id="longUrl" value="" size="80">
   <button onclick="shortenURL()">Shorten URL</button>
 
   <p><strong>Short URL:</strong> <span id="result">None</span></p>
@@ -14,29 +14,24 @@
   <script>
     async function shortenURL() {
       const longUrl = document.getElementById('longUrl').value;
-      const apiKey = "sk_59b3pOKJVXS5Fp88";
-      const domain = "yourcustomdomain.com"; // ← Replace with your actual Short.io domain
+      const token = "f9d7cd7352b9cb4631ac3ce56cc3eaf928075508";
 
       try {
-        const response = await fetch("https://api.short.io/links", {
+        const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
           method: "POST",
           headers: {
-            "accept": "application/json",
-            "Content-Type": "application/json",
-            "authorization": apiKey
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            originalURL: longUrl,
-            domain: domain
-          })
+          body: JSON.stringify({ long_url: longUrl })
         });
 
         if (!response.ok) {
-          throw new Error("Short.io API error: " + response.statusText);
+          throw new Error("Bitly API error: " + response.status);
         }
 
         const data = await response.json();
-        document.getElementById("result").innerHTML = `<a href="${data.shortURL}" target="_blank">${data.shortURL}</a>`;
+        document.getElementById("result").innerHTML = `<a href="${data.link}" target="_blank">${data.link}</a>`;
       } catch (error) {
         document.getElementById("result").innerText = "Error: " + error.message;
         console.error("Error:", error);
