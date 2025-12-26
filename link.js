@@ -1,3 +1,3 @@
 // Sirf yaha link change karna padega
-const VIDEO_LINK = "https://edge2.roarzone.info:8443/roarzone/edge2/sony-sports-1-hd/index.m3u8?token=aaedc78b30a2ba0da7b9040a3d411a213c1f01f0-6ca1fe6d7e6ecab0c2b0b070844a0121-1766740963-1766730163";
+const VIDEO_LINK = "https://tvsen5.aynascope.net/c9EpzZ6fQBJ3/index.m3u8?e=1766739382&u=ef3dd85c-c300-4e09-b2f1-9138aec7211b&token=b9a16ba32cc6600c02557a1551d55487";
 
