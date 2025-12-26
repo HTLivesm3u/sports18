@@ -102,27 +102,33 @@
 
 <video autoplay="yes" oncanplay="this.muted=true"  id="player" controls preload="metadata" poster="https://media.tenor.com/vp3V50Hs-B8AAAAm/loading-waiting.webp" controls></video>
 <img id="myLogo" src="https://shotner.u0k.workers.dev/IMG.jpg">
-
+  <script src="link.js"></script>
   <script type="text/javascript">
-    fetch("link.txt")
-.then(res => res.json())
-.then(data => {
-    const video = document.getElementById("player");
-    const player = new Plyr(video);
+    const queryParams = new URLSearchParams(window.location.search);
+        const videoUrl = queryParams.get('url');
+        
 
-    if (Hls.isSupported()) {
+    
+  
+    document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById("player");
+            const player = new Plyr(video, { captions: { active: true, update: true, language: 'en' } });
+            const videoUrl = queryParams.get('url');
+
+            if (Hls.isSupported()) {
         const hls = new Hls();
-        hls.loadSource(data.url);
+        hls.loadSource(VIDEO_LINK);
         hls.attachMedia(video);
     } else {
         player.source = {
             type: 'video',
-            sources: [{ src: data.url, type: 'application/vnd.apple.mpegurl' }]
+            sources: [{ src: VIDEO_LINK, type: 'application/vnd.apple.mpegurl' }]
         };
-    }
-        
+            }
+        });
   </script> 
   
+
 
 
 
