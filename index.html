@@ -104,33 +104,26 @@
 <img id="myLogo" src="https://shotner.u0k.workers.dev/IMG.jpg">
 
   <script type="text/javascript">
-    const queryParams = new URLSearchParams(window.location.search);
-        const videoUrl = queryParams.get('url');
+    fetch("video.json")
+.then(res => res.json())
+.then(data => {
+    const video = document.getElementById("player");
+    const player = new Plyr(video);
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(data.url);
+        hls.attachMedia(video);
+    } else {
+        player.source = {
+            type: 'video',
+            sources: [{ src: data.url, type: 'application/vnd.apple.mpegurl' }]
+        };
+    }
         
-
-    
-  
-    document.addEventListener('DOMContentLoaded', () => {
-            const video = document.getElementById("player");
-            const player = new Plyr(video, { captions: { active: true, update: true, language: 'en' } });
-            const defaultUrl = "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd?__hdnea__=st=1766689209~exp=1766775609~acl=/*~hmac=b6e352ff3d7eeb69c2e226a1114c0b3d86ac9bf78e968bdda0e5b1ce099296f4";
-            const videoUrl = queryParams.get('url') || defaultUrl;
-
-
-            if (Hls.isSupported()) {
-                const hls = new Hls();
-                hls.loadSource(videoUrl);
-                hls.attachMedia(video);
-                window.hls = hls;
-            } else {
-                player.source = {
-                    type: 'video',
-                    sources: [{ src: videoUrl, type: 'application/vnd.apple.mpegurl' }]
-                };
-            }
-        });
   </script> 
   
+
 
 
 
