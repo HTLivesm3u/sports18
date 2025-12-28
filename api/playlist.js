@@ -21,7 +21,7 @@ export default function handler(req, res) {
   const playlists = {
     jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jtv.m3u',
     jstar2: 'https://jtvplus.streamflex.workers.dev/JTVPLUSONLY.m3u',
-    zee5:'https://raw.githubusercontent.com/alex8875/m3u/main/z5.m3u'
+    zee5:'https://play.denver1769.fun/Play/Test00/Playlist.m3u'
   };
 
   const id = req.query.id;
