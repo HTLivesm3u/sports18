@@ -1,3 +1,3 @@
 // Sirf yaha link change karna padega
-const VIDEO_LINK = "https://shotner.u0k.workers.dev/hotstar.m3u8";
+const VIDEO_LINK = "https://ranapk.online/OPPLEX/RANAPK5/play.php?id=109986";
 
