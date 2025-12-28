@@ -19,8 +19,8 @@ export default function handler(req, res) {
 
   // Playlist map
   const playlists = {
-    jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jstar.m3u',
-    jstar2: 'https://raw.githubusercontent.com/alex8875/m3u/main/jstar.m3u',
+    jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jtv.m3u',
+    jstar2: 'https://jtvplus.streamflex.workers.dev/JTVPLUSONLY.m3u',
   };
 
   const id = req.query.id;
