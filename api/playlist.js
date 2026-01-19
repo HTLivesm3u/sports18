@@ -20,7 +20,7 @@ export default function handler(req, res) {
   // Playlist map
   const playlists = {
     jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jtv.m3u',
-    jstar2: 'https://ztv.pfy.workers.dev',
+    jstar2: 'https://tinyurl.com/Pocket-TV',
     zee5:'https://play.denver1769.fun/Play/Test00/Playlist.m3u'
   };
 
