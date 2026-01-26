@@ -48,63 +48,7 @@
 </head>
 <body>
 
-<!-- 🔒 DOMAIN BLOCK SCRIPT -->
-<script>
-(function () {
-  const blockedDomains = [
-    "skcricweb.pages.dev",
-    "insiderlivehd.pages.dev",
-    "cmvlive.blogspot.com",
-    "sportseera.pages.dev"
-  ];
 
-  function isBlocked(url) {
-    if (!url) return false;
-    const clean = url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-    return blockedDomains.some(d => clean === d || clean.endsWith("." + d));
-  }
-
-  const currentHost = window.location.hostname;
-  const refHost = document.referrer;
-
-  if (isBlocked(currentHost) || isBlocked(refHost)) {
-    document.documentElement.innerHTML = `
-      <html>
-      <head>
-        <title>Access Blocked</title>
-        <style>
-          body {
-            margin:0;
-            background:#000;
-            color:#fff;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            font-family:Arial;
-          }
-          .box {
-            border:2px solid red;
-            padding:30px;
-            border-radius:10px;
-            text-align:center;
-          }
-          h1 {color:red;}
-        </style>
-      </head>
-      <body>
-        <div class="box">
-          <h1>Access Blocked</h1>
-          <p>This domain is not allowed.</p>
-          <b>${currentHost}</b>
-        </div>
-      </body>
-      </html>
-    `;
-    window.stop();
-  }
-})();
-</script>
 
 <div class="video-container">
   <video autoplay playsinline muted id="player" controls></video>
@@ -115,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const params = new URLSearchParams(window.location.search);
   const streamUrl = params.get("url") || 
-  "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
+  "https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8";
 
   const video = document.getElementById("player");
 
