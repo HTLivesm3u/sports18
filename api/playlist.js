@@ -21,7 +21,7 @@ export default function handler(req, res) {
   const playlists = {
     jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jtv.m3u',
     jstar2: 'https://tinyurl.com/Pocket-TV',
-    ALLINONE:'https://grabify.link/J03DM7',
+    ALLINONE:'https://raw.githubusercontent.com/ytyou4777/NEWALLINONE/refs/heads/main/stream.m3u',
     Hotstar:'https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8|referer=https://allrounderlive.pages.dev&origin=https://allrounderlive.pages.dev&user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
   };
 
