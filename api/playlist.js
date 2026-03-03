@@ -21,7 +21,7 @@ export default function handler(req, res) {
   const playlists = {
     jstar: 'https://raw.githubusercontent.com/alex8875/m3u/main/jtv.m3u',
     jstar2: 'https://tinyurl.com/Pocket-TV',
-    ALLINONE:'https://raw.githubusercontent.com/ytyou4777/NEWALLINONE/refs/heads/main/stream.m3u',
+    ALLINONE:'https://newallinone.vercel.app/api/playlist?id=ALLINONE',
     Hotstar:'https://grabify.link/J03DM7'
   };
 
