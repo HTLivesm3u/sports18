@@ -304,6 +304,154 @@ function sharePage() {
     alert("Link copied to clipboard!");
   }
 }
+
+  <script>
+const appFrame=document.getElementById("appFrame");
+const verifyFrame=document.getElementById("verifyFrame");
+
+function checkVerified(){
+    if(localStorage.getItem("verifiedUser")){
+        verifyFrame.classList.add("hidden");
+        appFrame.classList.remove("hidden");
+        clearInterval(checker);
+    }
+}
+
+checkVerified(); // immediate
+const checker=setInterval(checkVerified,100);
+</script>
+
+  <!-- Popup (Adblock / Brave Shields) -->      
+<div class="adb" id="adb" style="display: none;">      
+  <div class="adbs">      
+    <h3>Adblock Detected</h3>      
+    <p>Please disable your adblocker or Brave Shields to continue browsing this site.</p>      
+  </div>      
+</div>      
+
+<style>
+  .adb {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+  }
+  .adbs {
+    background: #111;
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px #000;
+  }
+  .adbs h3 {
+    color: #ff4444;
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+  .adbs p {
+    font-size: 16px;
+  }
+</style>
+
+<script>
+  // ----------------- Popup Function -----------------      
+  function showPopup(reason = "Adblock Detected") {      
+    document.getElementById("adb").style.display = "flex";      
+    document.querySelector("#adb .adbs h3").innerText = reason;      
+    document.querySelector("#adb .adbs p").innerText =
+      "Please disable your Dns adguard or adblocker or Brave Shields to continue browsing this site.";
+    console.warn("⚠️ Popup Triggered:", reason);      
+  }      
+
+  // ----------------- PC Browser Adblock Detection -----------------      
+  async function detectAdblock() {      
+    let detected = false;      
+    
+    const bait = document.createElement("div");      
+    bait.className = "ad adsbox ad-banner adsense ad-container sponsored";      
+    bait.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";      
+    document.body.appendChild(bait);      
+    
+    const img = document.createElement("img");      
+    img.src = "https://pagead2.googlesyndication.com/pagead/imgad?id=CAASFeDxyz";      
+    img.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";      
+    img.onerror = () => { detected = true; };      
+    document.body.appendChild(img);      
+    
+    const iframe = document.createElement("iframe");      
+    iframe.src = "https://googleads.g.doubleclick.net/pagead/html/r2023/sample-ad.html";      
+    iframe.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";      
+    iframe.onerror = () => { detected = true; };      
+    document.body.appendChild(iframe);      
+    
+    const script = document.createElement("script");      
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";      
+    script.async = true;      
+    script.onerror = () => { detected = true; };      
+    document.head.appendChild(script);      
+    
+    await new Promise(resolve => setTimeout(resolve, 500));      
+    
+    if (      
+      window.getComputedStyle(bait).display === "none" ||      
+      bait.offsetHeight === 0 ||      
+      bait.offsetParent === null      
+    ) {      
+      detected = true;      
+    }      
+    
+    bait.remove();      
+    img.remove();      
+    iframe.remove();      
+    script.remove();      
+    
+    return detected;      
+  }      
+
+  // ----------------- Brave Shields Detection -----------------      
+  async function detectBraveShields() {      
+    try {      
+      let res = await fetch("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {      
+        method: "GET",      
+        cache: "no-store",      
+        mode: "no-cors"      
+      });      
+  
+      if (res.type === "opaque") {      
+        try {      
+          const buf = await res.clone().arrayBuffer();      
+          console.log(" Brave Response Size:", buf.byteLength);      
+          return buf.byteLength >= 100; // Shields ON if >100      
+        } catch (e) {      
+          console.warn(" Brave fetch blocked", e);      
+          return true;      
+        }      
+      }      
+      return true;      
+    } catch (e) {      
+      console.error(" Brave Shields hard blocked", e);      
+      return true;      
+    }      
+  }      
+
+  // ----------------- Main -----------------      
+  window.addEventListener("load", async () => {      
+    const shieldsOn = await detectBraveShields();      
+    if (shieldsOn) {      
+      showPopup("Adblock Detected");      
+      return;      
+    }      
+    const adblocker = await detectAdblock();      
+    if (adblocker) {      
+      showPopup("Adblock Detected");      
+    }      
+  });      
+</script>
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"54f5e755420b4a37a6f59a2f2d219ef3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
